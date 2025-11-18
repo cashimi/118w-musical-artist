@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <title>About</title>
+  <link rel='stylesheet' href='assets/styles.css'>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo spin">MT</div>
+          <div>malcolmtodd.life</div>
+        </div>
+        <button class="menu-btn">Menu</button>
+        <div class="nav-links"><a href="index.html" class="">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="discography.html" class="">Discography</a>
+          <a href="shop.html" class="">Shop</a>
+          <a href="newsletter.html" class="">Newsletter</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class='container'>
+    <section class="section">
+      <h2>Biography</h2>
+      <div class="grid-2">
+        <div class="card">
+          <img src="images/malcAbout1.png" 
+               alt="Malcolm Todd performing" 
+               style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+        </div>
+        
+        <div class="card">
+          <p>Malcolm Todd is a rising artist known for his genre-blending sound, smooth vocals, and charismatic stage presence. Growing up surrounded by music, he developed an early passion for songwriting and performance, shaping a style that blends pop, R&B, and alt influences with a modern, youthful energy. His music often carries an intimate, storytelling feel, giving listeners a window into his thoughts, relationships, and the experiences that shaped him.</p>
+        </div>
+        
+        <div class="card">
+          <p>As Malcolm began releasing music online, his fanbase grew rapidly across social platforms and streaming services. Listeners connected not only with his sound but with the authenticity he brings to each track. Songs like “Art Therapy,” “Roommates,” and “Fell in Love With a Girl” helped establish him as an artist with a unique voice in a crowded landscape, and his evolving discography continues to showcase his growth as a writer and performer.</p>
+        </div>
+        
+        <div class="card">
+          <img src="images/malcAbout2.png" 
+               alt="Malcolm Todd studio" 
+               style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+        </div>
+        
+        <div class="card">
+          <img src="images/malcAbout3.webp" 
+               alt="Malcolm Todd live" 
+               style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+        </div>
+        
+        <div class="card">
+          <p>TToday, Malcolm Todd is expanding his reach with new music, live performances, and a steadily growing global audience. Whether he’s on stage, in the studio, or sharing moments with fans, he brings a sincerity and creative vision that set him apart. With each release, he continues to push into new territory, building a career defined by connection, versatility, and the sound that makes Malcolm unmistakably Malcolm Todd.</p>
+        </div>                
+        
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="links"><span class="badge">© 2025 Malcolm Todd (demo)</span>
+        <a style="color:white;text-decoration:none;" href="#">Instagram</a>
+        <a style="color:white;text-decoration:none;" href="#">YouTube</a>
+        <a style="color:white;text-decoration:none;" href="#">Spotify</a>
+      </div>
+    </div>
+  </footer>
+  <script src='assets/main.js'></script>
+</body>
+
+</html>
