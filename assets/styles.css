@@ -7,17 +7,31 @@
   --radius: 12px;
 }
 
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
 html,
 body {
+  height: 100%;
   margin: 0;
-  padding: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color: var(--navy);
   background: var(--light-gray);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+main {
+  flex: 1;
 }
 
 .container {
@@ -30,13 +44,12 @@ body {
 header {
   background: var(--maroon);
   color: white;
-  position: sticky;
   top: 0;
-  z-index: 50;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+  margin: 10px;
 }
 
 nav {
+  font-family: Oswald, sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,7 +61,9 @@ nav {
   align-items: center;
   gap: .75rem;
   font-weight: 700;
-  letter-spacing: .5px;
+  letter-spacing: 2px;
+  font-size: 50px;
+  font-style: oblique;
 }
 
 .brand .logo {
@@ -66,6 +81,9 @@ nav {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
 }
 
 .nav-links a {
@@ -73,7 +91,6 @@ nav {
   text-decoration: none;
   padding: .6rem .9rem;
   border-radius: 999px;
-  font-weight: 600;
 }
 
 .nav-links a:hover,
@@ -240,16 +257,41 @@ input[type="email"] {
 }
 
 footer {
-  margin-top: 3rem;
-  padding: 2rem 1rem;
+  font-family: Oswald, sans-serif;
+  margin: 10px;
+  padding: 0rem 3rem;
+  font-size: 20px;
+  letter-spacing: 1px;
   color: white;
   background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 footer .links {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.socials {
+  list-style-type: none;
+  gap: 15px;
+  display: flex;
+}
+
+.socials li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.socials img {
+  width: 32px;
+}
+
+.socials img:hover {
+  opacity: 0.5;
 }
 
 @keyframes spin {
