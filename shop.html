@@ -34,19 +34,27 @@
   
   <main class='container'>
     <section class="section">
-      <h2>Merch</h2>
+      <h2>MERCHANDISE</h2>
       <div class="grid-3">
         <div class="card">
-          <img src="images/malcVinyl.png" alt="Vinyl" style="width:100%;border-radius:8px;margin-bottom:.5rem;">
-          <button class="btn">Vinyl</button>
+          <img src="images/malcVinyl.png" alt="Vinyl">
+          <h3 class="product-title">Signed Vinyl</h3>
+          <p class="price">$29.00</p>
+          <button class="btn details-btn" data-product="vinyl">Details</button>
         </div>
+      
         <div class="card">
-          <img src="images/malcTee.png" alt="T-Shirt" style="width:100%;border-radius:8px;margin-bottom:.5rem;">
-          <button class="btn">T-Shirt</button>
+          <img src="images/malcTee.png" alt="T-Shirt">
+          <h3 class="product-title">Logo T-Shirt</h3>
+          <p class="price">$24.00</p>
+          <button class="btn details-btn" data-product="tshirt">Details</button>
         </div>
+      
         <div class="card">
-          <img src="images/malcPoster.jpg" alt="Poster" style="width:100%;border-radius:8px;margin-bottom:.5rem;">
-          <button class="btn">Poster</button>
+          <img src="images/malcPoster.jpg" alt="Poster">
+          <h3 class="product-title">Tour Poster</h3>
+          <p class="price">$12.00</p>
+          <button class="btn details-btn" data-product="poster">Details</button>
         </div>
       </div>
     </section>
@@ -73,7 +81,36 @@
       <!-- End content edits here. -->
     </footer>
 
-
+    <dialog id="productModal" class="product-modal">
+      <form method="dialog" class="modal-card">
+        <button class="modal-close" aria-label="Close">✕</button>
+    
+        <div class="modal-media">
+          <img id="modalImage" alt="">
+        </div>
+    
+        <div class="modal-body">
+          <h3 id="modalTitle"></h3>
+          <p id="modalPrice" class="price"></p>
+          <p id="modalDesc" class="desc"></p>
+    
+          <div id="optionGroup" class="options" hidden>
+            <label for="modalOption" id="optionLabel">Size</label>
+            <select id="modalOption"></select>
+          </div>
+    
+          <div class="qty-row">
+            <label for="modalQty">Qty</label>
+            <input id="modalQty" type="number" min="1" value="1">
+          </div>
+    
+          <div class="modal-actions">
+            <button class="btn secondary" value="cancel">Close</button>
+            <button class="btn" value="default">Add to Cart</button>
+          </div>
+        </div>
+      </form>
+    </dialog>
 
   <script src='assets/main.js'></script>
 </body>
