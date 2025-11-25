@@ -1,20 +1,46 @@
 <!--darion-->
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <title>About</title>
-  <link rel='stylesheet' href='assets/styles.css'>
-    <!--FONTS-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MT - About</title>
+
+  <link rel="icon" type="image/png" href="images/Malcolm_Todd.png">
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Background Image Overlay */
+    .about-bg {
+      background: url("/118w-musical-artist/images/about-bg.png") center/cover no-repeat;
+      position: relative;
+      padding: 60px 0;
+    }
+
+    .about-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.65); /* lower opacity effect */
+      
+    }
+
+    .about-inner {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- HEADER -->
   <header>
     <div class="container">
       <nav>
@@ -22,77 +48,158 @@
           <div class="logo spin">MT</div>
           <div>MALCOLM TODD</div>
         </div>
+
         <button class="menu-btn">Menu</button>
-        <div class="nav-links"><a href="index.html" class="">home</a>
+
+        <div class="nav-links">
+          <a href="index.html">home</a>
           <a href="about.html" class="active">about</a>
-          <a href="discography.html" class="">discography</a>
-          <a href="shop.html" class="">shop</a>
-          <a href="newsletter.html" class="">newsletter</a>
+          <a href="discography.html">discography</a>
+          <a href="shop.html">shop</a>
+          <a href="newsletter.html">newsletter</a>
         </div>
+
         <a href="shoppingcart.html" class="cart-icon">
           <img src="images/cart.png" alt="Cart">
-        </a> 
+          <span id="cart-count" class="cart-badge"></span>
+        </a>
       </nav>
     </div>
   </header>
-  <main class='container'>
-    <section class="section">
-      <h2>Biography</h2>
-      <div class="grid-2">
-        <div class="card">
-          <img src="images/malcAbout1.png" 
-               alt="Malcolm Todd performing" 
-               style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- TITLE SECTION -->
+    <section class="container section" style="text-align:center;">
+      <h2 style="font-size:40px; margin-top:20px; margin-bottom:20px; letter-spacing:4px;">
+        ABOUT MALCOLM TODD
+      </h2>
+    </section>
+
+    <!-- BACKGROUND SECTION WITH BIO -->
+    <section class="about-bg">
+      <div class="container about-inner" style="
+          max-width:1000px;
+          margin:auto;
+          background:white;
+          padding:2.5rem;
+          border-radius:var(--radius);
+          border:1px solid #e5e7eb;
+        ">
+
+        <div class="grid-2">
+
+          <!-- LEFT BIO TEXT -->
+          <div>
+            <p style="line-height:1.8; margin-bottom:1.2rem; font-size:1.05rem;">
+              Malcolm Todd Hobert, known professionally as Malcolm Todd, is an American
+              singer-songwriter, musician, and record producer born on September 15, 2003,
+              in Los Angeles, California. He is recognized for his blend of genres, including
+              indie pop, alternative R&B, R&B, and bedroom pop.
+            </p>
+
+            <p style="line-height:1.8; margin-bottom:1.2rem; font-size:1.05rem;">
+              Growing up surrounded by music, he developed an early passion for songwriting
+              and performance, shaping a style that blends pop, R&B, and alternative
+              influences with a modern, youthful energy.
+            </p>
+            
+            <p style="line-height:1.8; margin-bottom:1.2rem; font-size:1.05rem;">
+              Todd began his career during the COVID-19 pandemic, writing and producing his
+              first extended play, <i>Demos Before Prom</i>, which contained songs from his
+              high school years. While initially gaining attention by claiming his songs were
+              unreleased tracks by Steve Lacy, his commercial breakthrough came in 2023.
+            </p>
+
+            <p style="line-height:1.8; margin-bottom:1.2rem; font-size:1.05rem;">
+              His singles "Art House" and "Roommates" went viral on TikTok, leading to his
+              signing with Columbia Records.
+            </p>
+
+          </div>
+
+          <!-- RIGHT IMAGE -->
+          <div class="card" style="padding:0;">
+            <img src="images/malcAbout1.png" alt="Malcolm Todd" style="
+              width:80%;
+              height:80%;
+              object-fit:cover;
+              border-radius:var(--radius);
+            ">
+          </div>
+
         </div>
-        
-        <div class="card">
-          <p>Malcolm Todd is a rising artist known for his genre-blending sound, smooth vocals, and charismatic stage presence. Growing up surrounded by music, he developed an early passion for songwriting and performance, shaping a style that blends pop, R&B, and alt influences with a modern, youthful energy. His music often carries an intimate, storytelling feel, giving listeners a window into his thoughts, relationships, and the experiences that shaped him.</p>
-        </div>
-        
-        <div class="card">
-          <p>As Malcolm began releasing music online, his fanbase grew rapidly across social platforms and streaming services. Listeners connected not only with his sound but with the authenticity he brings to each track. Songs like “Art Therapy,” “Roommates,” and “Fell in Love With a Girl” helped establish him as an artist with a unique voice in a crowded landscape, and his evolving discography continues to showcase his growth as a writer and performer.</p>
-        </div>
-        
-        <div class="card">
-          <img src="images/malcAbout2.png" 
-               alt="Malcolm Todd studio" 
-               style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
-        </div>
-        
-        <div class="card">
-          <img src="images/malcAbout3.webp" 
-               alt="Malcolm Todd live" 
-               style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
-        </div>
-        
-        <div class="card">
-          <p>Today, Malcolm Todd is expanding his reach with new music, live performances, and a steadily growing global audience. Whether he’s on stage, in the studio, or sharing moments with fans, he brings a sincerity and creative vision that set him apart. With each release, he continues to push into new territory, building a career defined by connection, versatility, and the sound that makes Malcolm unmistakably Malcolm Todd.</p>
-        </div>                
-        
       </div>
     </section>
+
+    <!-- SECOND BIO SECTION -->
+<section style="background-color: rgba(128,0,0,0.7); padding:80px 0;">
+  <div class="container about-inner" style="
+      max-width:1000px;
+      background:white;
+      padding:2.5rem;
+      border-radius:var(--radius);
+      border:1px solid #e5e7eb;
+      margin-top:60px;
+    ">
+    <div class="grid-2">
+
+      <!-- IMAGE ON LEFT -->
+      <div class="card bio-image" style="padding:0;">
+        <img src="/118w-musical-artist/images/aboutmalc4.png" alt="Malcolm Todd" style="
+          width:100%;
+          height:100%;
+          object-fit:cover;
+          border-radius:var(--radius);
+        ">
+      </div>
+
+      <!-- BIO TEXT ON RIGHT -->
+      <div class="bio-text">
+        <p style="line-height:1.8; margin-bottom:1.2rem; font-size:1.05rem;">
+          Malcolm Todd has also collaborated with emerging artists, blending his signature indie-pop style with experimental sounds. These collaborations have helped him expand his creative reach and explore new musical directions.
+        </p>
+        <p style="line-height:1.8; margin-bottom:1.2rem; font-size:1.05rem;">
+          Beyond music, he is involved in producing content for social media and connecting with fans directly, creating a highly interactive and personal experience with his audience.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- OFFICIAL STORE – CENTER ONLY -->
+    <section class="container" style="margin-top:60px; max-width:500px;">
+      <div class="card" style="text-align:center;">
+        <h3 style="font-family:Oswald; letter-spacing:2px; color:var(--navy);">
+          OFFICIAL STORE
+        </h3>
+        <a href="shop.html" class="btn" style="margin-top:10px;">
+          Shop Now
+        </a>
+      </div>
+    </section>
+
   </main>
-    <!-- //  FOOTER INFO, SOCIAL MEDIA  // -->
-    <footer>
-      <!-- Start content edits below this line. -->
-      <p>© 2025 Malcolm Todd</p>
 
-      <!-- Add or remove any networks. -->
-      <ul class="socials">
-        <li>
-          <a href="https://www.instagram.com/malcolmtodd" target="_blank"><img src="images/instagram.png" alt="My LinkedIn Account"></a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/@malcolm_todd" target="_blank"><img src="images/youtube.png" alt="My Youtube Account"></a>
-        </li>
-        <li>
-          <a href="https://open.spotify.com/artist/7eKkW1zo5uzW8kUntiiBvz" target="_blank"><img src="images/spotify.png" alt="My Youtube Account"></a>
-        </li>
-      </ul>
-  
-      <!-- End content edits here. -->
-    </footer>
-  <script src='assets/main.js'></script>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Malcolm Todd</p>
+
+    <ul class="socials">
+      <li><a href="https://www.instagram.com/malcolmtodd" target="_blank">
+        <img src="images/instagram.png"></a></li>
+      <li><a href="https://www.youtube.com/@malcolm_todd" target="_blank">
+        <img src="images/youtube.png"></a></li>
+      <li><a href="https://open.spotify.com/artist/7eKkW1zo5uzW8kUntiiBvz" target="_blank">
+        <img src="images/spotify.png"></a></li>
+    </ul>
+  </footer>
+
+  <script src="assets/main.js"></script>
+  <script src="assets/cart.js"></script>
+
 </body>
-
 </html>

@@ -58,6 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const modal = document.getElementById('productModal');
       if (!modal) return;
 
+      let currentProductId = null;
+
       const img = document.getElementById('modalImage');
       const titleEl = document.getElementById('modalTitle');
       const priceEl = document.getElementById('modalPrice');
@@ -72,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
       function openProduct(id) {
           const data = PRODUCTS[id];
           if (!data) return;
+
+          currentProductId = id;
 
           img.src = data.image;
           img.alt = data.title;
@@ -117,18 +121,35 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       modal.querySelector('form')?.addEventListener('submit', e => {
-          e.preventDefault();
-          const submitter = e.submitter;
-          if (submitter?.value === 'cancel') return closeModal();
-
-          submitter.textContent = 'Added!';
-          submitter.disabled = true;
-          setTimeout(() => {
-              submitter.disabled = false;
-              submitter.textContent = 'Add to Cart';
-              closeModal();
-          }, 650);
-      });
+        e.preventDefault();
+        const submitter = e.submitter;
+        if (submitter?.value === 'cancel') return closeModal();
+    
+        // ⭐ Build cart item
+        const product = PRODUCTS[currentProductId];
+        if (product) {
+            const quantity = parseInt(qtyInput.value, 10) || 1;
+            const option = product.options ? optionSelect.value : null;
+    
+            addToCart({
+                id: product.id,
+                type: 'merch',
+                title: product.title,
+                price: product.price,
+                option,       // e.g. size for t-shirt, or null
+                quantity
+            });
+        }
+    
+        // Existing visual feedback
+        submitter.textContent = 'Added!';
+        submitter.disabled = true;
+        setTimeout(() => {
+            submitter.disabled = false;
+            submitter.textContent = 'Add to Cart';
+            closeModal();
+        }, 650);
+    });
 
       document.addEventListener('click', e => {
           const btn = e.target.closest('[data-product]');
@@ -183,23 +204,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 2500);
   }
 
-  addToCartBtn?.addEventListener("click", async () => {
-      const price = parseInt(sectionSelect.selectedOptions[0].dataset.price);
-      const quantity = parseInt(quantitySelect.value);
+  addToCartBtn?.addEventListener("click", () => {
+    const price = parseInt(sectionSelect.selectedOptions[0].dataset.price, 10);
+    const quantity = parseInt(quantitySelect.value, 10) || 1;
 
-      await fetch("/api/cart/add", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-              show_id: selectedShow,
-              section: sectionSelect.value,
-              quantity,
-              price
-          })
-      });
+    // ⭐ Add ticket to cart
+    addToCart({
+        id: selectedShow,           // e.g. "wellington_2026_02_04"
+        type: 'ticket',
+        title: selectedShow,        // or make a prettier label if you want
+        price,
+        option: sectionSelect.value, // "upper" / "lower"
+        quantity
+    });
 
-      showToast("✔ Successfully added to cart!");
-      ticketModal.classList.add("hidden");
-  });
+    showToast("✔ Successfully added to cart!");
+    ticketModal.classList.add("hidden");
+});
 
 }); 
