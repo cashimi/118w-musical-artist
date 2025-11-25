@@ -60,7 +60,7 @@ nav {
   gap: .75rem;
   font-weight: 700;
   letter-spacing: 2px;
-  font-size: 45px;
+  font-size: 35px;
   font-style: oblique;
 }
 
@@ -73,8 +73,8 @@ nav {
   display: grid;
   place-items: center;
   font-weight: 800;
-  font-size: 18px;   
-  line-height: 1;    
+  font-size: 18px;   /* <-- add this */
+  line-height: 1;    /* <-- ensures perfect centering */
 }
 
 
@@ -276,6 +276,11 @@ nav {
   .modal-media { height: 220px; }
 }
 
+
+
+
+
+
 .card img {
   width: 100%;
   height: auto;
@@ -284,7 +289,7 @@ nav {
 }
 
 .card .btn {
-  margin-top: auto;
+  margin-top: auto; /* Push the button to the bottom of the card */
 }
 
 .badge {
@@ -533,4 +538,15 @@ footer .links {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+.cart-icon {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cart-icon img {
+  width: 35px;
+  height: 35px;
+  filter: brightness(500%) saturate(0%) !important;
 }
