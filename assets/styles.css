@@ -538,6 +538,7 @@ footer .links {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
 .cart-icon {
   margin-left: 20px;
   display: flex;
@@ -546,7 +547,8 @@ footer .links {
 }
 
 .cart-icon img {
-  width: 35px;
-  height: 35px;
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain !important;
   filter: brightness(500%) saturate(0%) !important;
 }
