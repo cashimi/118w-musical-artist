@@ -28,6 +28,7 @@
 </header>
 
 <main class="container">
+
     <section class="section">
         <h2>Join the Newsletter</h2>
 
@@ -38,7 +39,6 @@
           action="https://formsubmit.co/ajax/javier.contreras@sjsu.edu"
           method="POST"
         >
-
             <!-- Email input -->
             <input
               type="email"
@@ -50,26 +50,22 @@
 
             <button class="btn" type="submit">Subscribe</button>
 
-            <!-- FormSubmit settings -->
+            <!-- FormSubmit configuration -->
             <input type="hidden" name="_subject" value="New newsletter subscriber!" />
             <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false">
 
-            <!-- Auto-response (sent to the user) -->
+            <!-- Auto email sent to the user -->
             <input type="hidden" name="_autoresponse"
                    value="Thank you for subscribing to the newsletter! Stay tuned for updates." />
-
-            <!-- Optional: prevent spam bots -->
-            <input type="hidden" name="_captcha" value="false">
         </form>
 
-        <!-- Welcome message on the page -->
+        <!-- Welcome message under the form -->
         <div id="welcome-message"
              style="margin-top:15px; color:#2a4e7b; font-weight:600;"></div>
 
-        <p style="margin-top:1rem;color:#335155;">
-            This is a demo form. Hook up FastAPI + SQLite later.
-        </p>
     </section>
+
 </main>
 
 <footer>
@@ -84,17 +80,17 @@
     </div>
 </footer>
 
-<!-- Your existing JS -->
+<!-- Existing JS file -->
 <script src="assets/main.js"></script>
 
-<!-- Script that sends to FormSubmit and shows welcome message -->
+<!-- Script for FormSubmit + welcome message -->
 <script>
   const form = document.getElementById("newsletter-form");
   const emailInput = document.getElementById("email");
   const welcomeBox = document.getElementById("welcome-message");
 
   form.addEventListener("submit", async function (event) {
-    event.preventDefault(); // prevent redirect
+    event.preventDefault(); // stop refresh
 
     const email = emailInput.value.trim();
     if (!email) {
@@ -102,7 +98,6 @@
       return;
     }
 
-    // Prepare FormSubmit request
     const url = form.getAttribute("action");
     const data = { email: email };
 
@@ -121,16 +116,15 @@
           "Welcome to the newsletter, " + email + "! 🎉 Check your inbox.";
         emailInput.value = "";
       } else {
-        welcomeBox.textContent =
-          "Something went wrong. Please try again.";
+        welcomeBox.textContent = "Something went wrong. Please try again.";
       }
     } catch (err) {
-      welcomeBox.textContent =
-        "Network error. Please try again in a moment.";
+      welcomeBox.textContent = "Network error. Please try again in a moment.";
     }
   });
 </script>
 
 </body>
 </html>
+
 
