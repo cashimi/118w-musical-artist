@@ -432,6 +432,112 @@ footer .links {
   display: none;
 }
 
+/* === Discography 4-Column Album Grid === */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* Match your existing responsive behavior */
+@media (max-width:960px) {
+  .grid-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width:640px) {
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Album placeholder styling (same style you’re already using) */
+.album-cover {
+  height: 120px;
+  background: #e9edf2;
+  border: 1px dashed #c2cada;
+  border-radius: 8px;
+}
+
+.latest-release-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.latest-release-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.15);
+}
+
+.latest-release-thumb {
+  width: 100%;
+  height: 315px;
+  object-fit: cover;
+  display: block;
+}
+
+.latest-release-overlay {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,.20);
+  transition: transform .25s ease;
+}
+
+.latest-release-card:hover .latest-release-overlay {
+  transform: scale(1.15);
+}
+
+/* Release Type Labels */
+.release-label {
+  margin-top: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+/* Color Coding – Option A */
+.release-label.album {
+  background: var(--navy);
+  color: white;
+}
+
+.release-label.ep {
+  background: var(--maroon);
+  color: white;
+}
+
+.release-label.single {
+  background: #6b7280; /* Neutral gray */
+  color: white;
+}
+
+/* Center all text inside release cards */
+.card p {
+  text-align: center;
+  width: 100%;
+}
+
+.card .release-label {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 .cart-icon {
   margin-left: 20px;
   display: flex;
