@@ -4,7 +4,8 @@
 <head>
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <title>About</title>
+  <title>MT - cart</title>
+  <link rel="icon" type="image/png" href="images/Malcolm_Todd.png">
   <link rel='stylesheet' href='assets/styles.css'>
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,15 +32,116 @@
         </div>
         <a href="shoppingcart.html" class="cart-icon">
           <img src="images/cart.png" alt="Cart">
-        </a> 
+          <span id="cart-count" class="cart-badge"></span>
+        </a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <h1>Your Shopping Cart</h1>
-    <p>Your cart is currently empty.</p>
+    <button id="clear-cart" class="btn danger clear-cart-btn">Clear Cart</button><br><br>
+    <div id="cart-container">
+      <!-- Cart content will be injected here -->
+    </div>
   </main>
   <script src="assets/cart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const clearBtn = document.getElementById("clear-cart");
+
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        if (confirm("Are you sure you want to clear your entire cart?")) {
+          saveCart([]);        // clear the cart
+          updateCartBadge();   // refresh badge
+          renderCart();        // refresh UI
+        }
+      });
+    }
+  });
+  function formatMoney(n) {
+    return '$' + n.toFixed(2);
+  }
+
+  // This function name is important: cart.js will call renderCart()
+  function renderCart() {
+    const cart = getCart();
+    const container = document.getElementById('cart-container');
+
+    if (!cart.length) {
+      container.innerHTML = '<p>Your cart is currently empty.</p>';
+      return;
+    }
+
+    let rows = '';
+    cart.forEach((item, index) => {
+      const lineTotal = item.price * item.quantity;
+
+      rows += `
+        <tr>
+          <td>${item.title || item.id}</td>
+          <td>${item.option || '-'}</td>
+          <td>${formatMoney(item.price)}</td>
+          <td>
+            <input 
+              type="number" 
+              min="1" 
+              value="${item.quantity}" 
+              data-index="${index}" 
+              class="qty-input"
+            >
+          </td>
+          <td>${formatMoney(lineTotal)}</td>
+          <td>
+            <button class="btn secondary remove-btn" data-index="${index}">
+              Remove
+            </button>
+          </td>
+        </tr>
+      `;
+    });
+
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    container.innerHTML = `
+      <table class="table cart-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Option</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Subtotal</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows}
+        </tbody>
+      </table>
+      <p class="cart-total"><strong>Total: ${formatMoney(total)}</strong></p>
+    `;
+
+    // Wire up remove buttons
+    container.querySelectorAll('.remove-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.index, 10);
+        removeFromCart(idx);
+      });
+    });
+
+    // Wire up quantity changes
+    container.querySelectorAll('.qty-input').forEach(input => {
+      input.addEventListener('change', () => {
+        const idx = parseInt(input.dataset.index, 10);
+        const qty = parseInt(input.value, 10) || 0;
+        updateQuantity(idx, qty);
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', renderCart);
+</script>
 </body>
 </html>

@@ -539,16 +539,43 @@ footer .links {
   margin-right: auto;
   text-align: center;
 }
+/* ========== Cart Badge Styling ========== */
+
 .cart-icon {
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+  position: relative;
+  display: inline-block;
 }
 
 .cart-icon img {
-  width: 32px !important;
-  height: 32px !important;
-  object-fit: contain !important;
-  filter: brightness(500%) saturate(0%) !important;
+  width: 28px;
+  height: auto;
+}
+
+/* The badge dot */
+.cart-badge {
+  position: absolute;
+  top: -6px;        /* Move higher or lower */
+  right: -8px;      /* Move left or right */
+  
+  min-width: 18px;  /* Ensures perfect circle shape */
+  height: 18px;
+
+  padding: 0 4px;   /* Expands for 2-digit numbers */
+
+  background-color: #24176d;  /* Red badge */
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 17px;
+  text-align: center;
+
+  border-radius: 50%;         /* Make it circular */
+  box-shadow: 0 0 4px rgba(0,0,0,0.25);
+
+  pointer-events: none;       /* Don’t block clicks on the cart */
+}
+
+/* Hide the badge if no items */
+.cart-badge:empty {
+  display: none;
 }
