@@ -5,7 +5,8 @@
 <head>
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <title>Newsletter</title>
+  <title>MT - newsletter</title>
+  <link rel="icon" type="image/png" href="images/Malcolm_Todd.png">
   <link rel='stylesheet' href='assets/styles.css'>
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,13 +32,14 @@
         </div>
         <a href="shoppingcart.html" class="cart-icon">
           <img src="images/cart.png" alt="Cart">
-        </a> 
+          <span id="cart-count" class="cart-badge"></span>
+        </a>
       </nav>
     </div>
   </header>
   <main class='container'>
     <section class="section">
-      <h2>Join the Newsletter</h2>
+      <h2>JOIN THE NEWSLETTER</h2>
       <form id="newsletter-form" class="grid-2">
         <input type="email" placeholder="Enter email" aria-label="Email" required />
         <button class="btn" type="submit">Subscribe</button>
@@ -70,6 +72,7 @@
       <!-- End content edits here. -->
     </footer>
   <script src='assets/main.js'></script>
+  <script src="assets/cart.js"></script>
 </body>
 
 </html>

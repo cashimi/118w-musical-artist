@@ -5,7 +5,8 @@
 <head>
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <title>Shop</title>
+  <title>MT - shop</title>
+  <link rel="icon" type="image/png" href="images/Malcolm_Todd.png">
   <link rel='stylesheet' href='assets/styles.css'>
   <!--FONTS-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +31,8 @@
         </div>
         <a href="shoppingcart.html" class="cart-icon">
           <img src="images/cart.png" alt="Cart">
-        </a> 
+          <span id="cart-count" class="cart-badge"></span>
+        </a>
       </nav>
     </div>
   </header>
@@ -86,7 +88,7 @@
 
     <dialog id="productModal" class="product-modal">
       <form method="dialog" class="modal-card">
-        <button class="modal-close" aria-label="Close">✕</button>
+        <button type="button" class="modal-close" aria-label="Close">✕</button>
     
         <div class="modal-media">
           <img id="modalImage" alt="">
@@ -114,6 +116,8 @@
         </div>
       </form>
     </dialog>
+    <div id="toast" class="toast hidden">Successfully added to cart!</div>
+
 
   <script src='assets/main.js'></script>
   <script src="assets/cart.js"></script>
