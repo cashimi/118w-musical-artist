@@ -493,3 +493,44 @@ footer .links {
 .latest-release-card:hover .latest-release-overlay {
   transform: scale(1.15);
 }
+
+/* Release Type Labels */
+.release-label {
+  margin-top: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+/* Color Coding – Option A */
+.release-label.album {
+  background: var(--navy);
+  color: white;
+}
+
+.release-label.ep {
+  background: var(--maroon);
+  color: white;
+}
+
+.release-label.single {
+  background: #6b7280; /* Neutral gray */
+  color: white;
+}
+
+/* Center all text inside release cards */
+.card p {
+  text-align: center;
+  width: 100%;
+}
+
+.card .release-label {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
