@@ -1,130 +1,148 @@
 <!-- Javier -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newsletter</title>
-    <link rel="stylesheet" href="assets/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Newsletter</title>
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!--FONTS-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
+  <!-- ⭐ SAME HEADER AS ABOUT PAGE ⭐ -->
+  <header>
     <div class="container">
+      <nav>
         <div class="brand">
-            <div class="logo">MT</div>
-            <div>malcolmtodd.life</div>
+          <div class="logo spin">MT</div>
+          <div>MALCOLM TODD</div>
         </div>
-
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="discography.html">Discography</a>
-            <a href="shop.html">Shop</a>
-            <a href="newsletter.html" class="active">Newsletter</a>
-        </nav>
+        <button class="menu-btn">Menu</button>
+        <div class="nav-links">
+          <a href="index.html">home</a>
+          <a href="about.html">about</a>
+          <a href="discography.html">discography</a>
+          <a href="shop.html">shop</a>
+          <a href="newsletter.html" class="active">newsletter</a>
+        </div>
+      </nav>
     </div>
-</header>
+  </header>
 
-<main class="container">
+  <main class="container">
 
     <section class="section">
-        <h2>Join the Newsletter</h2>
+      <h2>Join the Newsletter</h2>
 
-        <!-- FormSubmit form -->
-        <form
-          id="newsletter-form"
-          class="grid-2"
-          action="https://formsubmit.co/ajax/javier.contreras@sjsu.edu"
-          method="POST"
-        >
-            <!-- Email input -->
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter email"
-              required
-            />
+      <!-- ⭐ FormSubmit-powered form -->
+      <form
+        id="newsletter-form"
+        class="grid-2"
+        action="https://formsubmit.co/ajax/javier.contreras@sjsu.edu"
+        method="POST"
+      >
 
-            <button class="btn" type="submit">Subscribe</button>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter email"
+          required
+        />
 
-            <!-- FormSubmit configuration -->
-            <input type="hidden" name="_subject" value="New newsletter subscriber!" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false">
+        <button class="btn" type="submit">Subscribe</button>
 
-            <!-- Auto email sent to the user -->
-            <input type="hidden" name="_autoresponse"
-                   value="Thank you for subscribing to the newsletter! Stay tuned for updates." />
-        </form>
+        <!-- FormSubmit options -->
+        <input type="hidden" name="_subject" value="New newsletter subscriber!" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
 
-        <!-- Welcome message under the form -->
-        <div id="welcome-message"
-             style="margin-top:15px; color:#2a4e7b; font-weight:600;"></div>
+        <!-- Auto email sent to the user -->
+        <input type="hidden" name="_autoresponse"
+               value="Thank you for subscribing to the newsletter! Stay tuned for updates." />
+      </form>
+
+      <!-- On-page welcome message -->
+      <div id="welcome-message"
+          style="margin-top:15px; color:#2a4e7b; font-weight:600;"></div>
 
     </section>
 
-</main>
+  </main>
 
-<footer>
-    <div class="container footer">
-        <span class="badge">© 2025 Malcolm Todd (demo)</span>
+  <!-- ⭐ SAME FOOTER AS ABOUT PAGE ⭐ -->
+  <footer>
+    <p>© 2025 Malcolm Todd</p>
 
-        <div class="links">
-            <a style="color:white;text-decoration:none;" href="#">Instagram</a>
-            <a style="color:white;text-decoration:none;" href="#">YouTube</a>
-            <a style="color:white;text-decoration:none;" href="#">Spotify</a>
-        </div>
-    </div>
-</footer>
+    <ul class="socials">
+      <li>
+        <a href="https://www.instagram.com/malcolmtodd" target="_blank">
+          <img src="images/instagram.png" alt="Instagram">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/@malcolm_todd" target="_blank">
+          <img src="images/youtube.png" alt="YouTube">
+        </a>
+      </li>
+      <li>
+        <a href="https://open.spotify.com/artist/7eKkW1zo5uzW8kUntiiBvz" target="_blank">
+          <img src="images/spotify.png" alt="Spotify">
+        </a>
+      </li>
+    </ul>
+  </footer>
 
-<!-- Existing JS file -->
-<script src="assets/main.js"></script>
+  <script src="assets/main.js"></script>
 
-<!-- Script for FormSubmit + welcome message -->
-<script>
-  const form = document.getElementById("newsletter-form");
-  const emailInput = document.getElementById("email");
-  const welcomeBox = document.getElementById("welcome-message");
+  <!-- JS for welcome message + AJAX submit -->
+  <script>
+    const form = document.getElementById("newsletter-form");
+    const emailInput = document.getElementById("email");
+    const welcomeBox = document.getElementById("welcome-message");
 
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault(); // stop refresh
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-    const email = emailInput.value.trim();
-    if (!email) {
-      welcomeBox.textContent = "Please enter a valid email.";
-      return;
-    }
-
-    const url = form.getAttribute("action");
-    const data = { email: email };
-
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-
-      if (response.ok) {
-        welcomeBox.textContent =
-          "Welcome to the newsletter, " + email + "! 🎉 Check your inbox.";
-        emailInput.value = "";
-      } else {
-        welcomeBox.textContent = "Something went wrong. Please try again.";
+      const email = emailInput.value.trim();
+      if (!email) {
+        welcomeBox.textContent = "Please enter a valid email.";
+        return;
       }
-    } catch (err) {
-      welcomeBox.textContent = "Network error. Please try again in a moment.";
-    }
-  });
-</script>
+
+      const url = form.getAttribute("action");
+      const data = { email: email };
+
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          welcomeBox.textContent =
+            "Welcome to the newsletter, " + email + "! 🎉 Check your inbox.";
+          emailInput.value = "";
+        } else {
+          welcomeBox.textContent = "Something went wrong. Please try again.";
+        }
+      } catch (err) {
+        welcomeBox.textContent = "Network error. Please try again.";
+      }
+    });
+  </script>
 
 </body>
 </html>
-
 
