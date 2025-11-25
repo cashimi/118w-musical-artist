@@ -1,17 +1,17 @@
 <!--brandon-->
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Discography</title>
-  <link rel='stylesheet' href='assets/styles.css'>
-    <!--FONTS-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  </head>
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!--FONTS-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -23,37 +23,94 @@
           <div>MALCOLM TODD</div>
         </div>
         <button class="menu-btn">Menu</button>
-        <div class="nav-links"><a href="index.html" class="">home</a>
-          <a href="about.html" class="">about</a>
+        <div class="nav-links">
+          <a href="index.html">home</a>
+          <a href="about.html">about</a>
           <a href="discography.html" class="active">discography</a>
-          <a href="shop.html" class="">shop</a>
-          <a href="newsletter.html" class="">newsletter</a>
+          <a href="shop.html">shop</a>
+          <a href="newsletter.html">newsletter</a>
         </div>
       </nav>
     </div>
   </header>
-  <main class='container'>
+
+  <main class="container">
+
+    <!-- Latest Release -->
     <section class="section">
       <h2>Latest Release</h2>
-      <div class="card" style="height:180px;display:grid;place-items:center;">YouTube Playlist / Embed</div>
+
+      <a href="https://youtu.be/U-Kx-I6esCk?si=HuvbZJ1dRmIjUfsy" 
+         target="_blank" 
+         style="text-decoration:none;">
+
+        <div class="latest-release-card">
+
+          <img 
+            src="https://img.youtube.com/vi/U-Kx-I6esCk/maxresdefault.jpg" 
+            alt="Latest Release Thumbnail" 
+            class="latest-release-thumb">
+
+          <div class="latest-release-overlay">
+            <img src="images/youtube.png" alt="YouTube" style="width:32px;">
+          </div>
+
+        </div>
+
+      </a>
     </section>
+
+
+    <!-- Albums -->
     <section class="section">
       <h2>Albums</h2>
-      <div class="grid-3">
+
+      <div class="grid-4">
+
         <div class="card">
-          <div style="height:120px;background:#e9edf2;border:1px dashed #c2cada;border-radius:8px;"></div>
-          <p><strong>Album Title</strong><br />Year</p>
+          <img src="images/Malcolm Todd (Still).png" class="album-cover-img" alt="Malcolm Todd (Still)">
+          <p><strong>Malcolm Todd (Still)</strong><br>2025</p>
         </div>
+
         <div class="card">
-          <div style="height:120px;background:#e9edf2;border:1px dashed #c2cada;border-radius:8px;"></div>
-          <p><strong>Album Title</strong><br />Year</p>
+          <img src="images/Malcolm Toddd.png" class="album-cover-img" alt="Malcolm Todd">
+          <p><strong>Malcolm Todd</strong><br>2024</p>
         </div>
+
         <div class="card">
-          <div style="height:120px;background:#e9edf2;border:1px dashed #c2cada;border-radius:8px;"></div>
-          <p><strong>Album Title</strong><br />Year</p>
+          <img src="images/Two New Malcolm Todd Songs - Single.png" class="album-cover-img" alt="Two New Malcolm Todd Songs – Single">
+          <p><strong>Two New Malcolm Todd Songs – Single</strong><br>2024</p>
         </div>
+
+        <div class="card">
+          <img src="images/Sweet Boy.png" class="album-cover-img" alt="Sweet Boy">
+          <p><strong>Sweet Boy</strong><br>2024</p>
+        </div>
+
+        <div class="card">
+          <img src="images/Sweet Boy Pt.2.png" class="album-cover-img" alt="Sweet Boy Pt. 2">
+          <p><strong>Sweet Boy Pt. 2</strong><br>2024</p>
+        </div>
+
+        <div class="card">
+          <img src="images/Sweet Boy Pt.1.png" class="album-cover-img" alt="Sweet Boy Pt. 1">
+          <p><strong>Sweet Boy Pt. 1</strong><br>2024</p>
+        </div>
+
+        <div class="card">
+          <img src="images/Shower Shoes.png" class="album-cover-img" alt="Shower Shoes">
+          <p><strong>Shower Shoes</strong><br>2022</p>
+        </div>
+
+        <div class="card">
+          <img src="images/Demos Before Prom.png" class="album-cover-img" alt="Demos Before Prom">
+          <p><strong>Demos Before Prom</strong><br>2022</p>
+        </div>
+
       </div>
     </section>
+
+    <!-- Singles / EPs -->
     <section class="section">
       <h2>Singles & EPs</h2>
       <ul>
@@ -62,28 +119,33 @@
         <li>EP Title — Year</li>
       </ul>
     </section>
-  </main>
-    <!-- //  FOOTER INFO, SOCIAL MEDIA  // -->
-    <footer>
-      <!-- Start content edits below this line. -->
-      <p>© 2025 Malcolm Todd</p>
 
-      <!-- Add or remove any networks. -->
-      <ul class="socials">
-        <li>
-          <a href="https://www.instagram.com/malcolmtodd" target="_blank"><img src="images/instagram.png" alt="My LinkedIn Account"></a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/@malcolm_todd" target="_blank"><img src="images/youtube.png" alt="My Youtube Account"></a>
-        </li>
-        <li>
-          <a href="https://open.spotify.com/artist/7eKkW1zo5uzW8kUntiiBvz" target="_blank"><img src="images/spotify.png" alt="My Youtube Account"></a>
-        </li>
-      </ul>
-  
-      <!-- End content edits here. -->
-    </footer>
-  <script src='assets/main.js'></script>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Malcolm Todd</p>
+
+    <ul class="socials">
+      <li>
+        <a href="https://www.instagram.com/malcolmtodd" target="_blank">
+          <img src="images/instagram.png" alt="Instagram">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/@malcolm_todd" target="_blank">
+          <img src="images/youtube.png" alt="YouTube">
+        </a>
+      </li>
+      <li>
+        <a href="https://open.spotify.com/artist/7eKkW1zo5uzW8kUntiiBvz" target="_blank">
+          <img src="images/spotify.png" alt="Spotify">
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+  <script src="assets/main.js"></script>
 </body>
 
 </html>
