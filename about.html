@@ -1,229 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MT - About</title>
-
-  <link rel="icon" type="image/png" href="images/Malcolm_Todd.png">
-  <link rel="stylesheet" href="assets/styles.css">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-
-  <!-- ANIMATIONS -->
-  <style>
-    /* Parallax Background */
-    .about-bg {
-      background: url("images/about-bg.png") center/cover no-repeat fixed;
-      position: relative;
-      padding: 80px 0;
-    }
-
-    .about-bg::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(255, 255, 255, 0.55);
-      backdrop-filter: blur(2px);
-    }
-
-    .about-inner {
-      position: relative;
-      z-index: 2;
-      animation: fadeIn 1.2s ease both;
-    }
-
-    /* Fade-in Animation */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Slide-in Image */
-    .bio-image {
-      opacity: 0;
-      animation: slideIn 1.4s ease forwards;
-      animation-delay: 0.5s;
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    /* Fade-in Text */
-    .bio-text p {
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-    }
-
-    .bio-text p:nth-child(1) { animation-delay: 0.3s; }
-    .bio-text p:nth-child(2) { animation-delay: 0.5s; }
-    .bio-text p:nth-child(3) { animation-delay: 0.7s; }
-    .bio-text p:nth-child(4) { animation-delay: 0.9s; }
-    .bio-text p:nth-child(5) { animation-delay: 1.1s; }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 760px) {
-      .about-bg {
-        background-attachment: scroll;
-      }
-    }
-  </style>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Malcolm Todd</title>
+  <!-- Link to CSS with correct GitHub Pages path -->
+  <link rel="stylesheet" href="/118w-musical-artist/assets/styles.css">
 </head>
-
 <body>
-
-  <!-- HEADER -->
+  <!-- Header / Navigation -->
   <header>
-    <div class="container">
-      <nav>
-        <div class="brand">
-          <div class="logo spin">MT</div>
-          <div>MALCOLM TODD</div>
-        </div>
-
-        <button class="menu-btn">Menu</button>
-
-        <div class="nav-links">
-          <a href="index.html">home</a>
-          <a href="about.html" class="active">about</a>
-          <a href="discography.html">discography</a>
-          <a href="shop.html">shop</a>
-          <a href="newsletter.html">newsletter</a>
-        </div>
-
-        <a href="shoppingcart.html" class="cart-icon">
-          <img src="images/cart.png" alt="Cart">
-          <span id="cart-count" class="cart-badge"></span>
-        </a>
-      </nav>
-    </div>
+    <h1>Malcolm Todd</h1>
+    <nav>
+      <ul>
+        <li><a href="/118w-musical-artist/index.html">Home</a></li>
+        <li><a href="/118w-musical-artist/about.html">About</a></li>
+        <li><a href="/118w-musical-artist/music.html">Music</a></li>
+        <li><a href="/118w-musical-artist/contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- Main content -->
   <main>
-
-    <!-- TITLE -->
-    <section class="container section" style="text-align:center;">
-      <h2 style="font-size:38px; margin-top:40px; letter-spacing:4px; opacity:0; animation:fadeIn 1s ease forwards;">
-        ABOUT MALCOLM TODD
-      </h2>
+    <section class="about">
+      <h2>About Malcolm Todd</h2>
+      <p>
+        Malcolm Todd Hobert, known professionally as Malcolm Todd, is an American singer-songwriter,
+        musician, and record producer born on September 15, 2003, in Los Angeles, California. He is
+        recognized for his blend of genres, including indie pop, alternative R&B, and R&B.
+      </p>
+      <img src="/118w-musical-artist/assets/images/malcolm-todd.jpg" alt="Malcolm Todd" />
     </section>
-
-    <!-- PARALLAX BACKGROUND SECTION -->
-    <section class="about-bg">
-
-      <div class="container about-inner" style="
-          max-width:1000px;
-          background:white;
-          padding:2.5rem;
-          border-radius:var(--radius);
-          border:1px solid #e5e7eb;
-        ">
-
-        <div class="grid-2">
-
-          <!-- BIO TEXT -->
-          <div class="bio-text">
-            <p style="line-height:1.8; margin-bottom:1.2rem; font-size:1.05rem;">
-              Malcolm Todd Hobert, known professionally as Malcolm Todd, is an American
-              singer-songwriter, musician, and record producer born on September 15, 2003,
-              in Los Angeles, California. He is recognized for his blend of genres,
-              including indie pop, alternative R&B, R&B, and bedroom pop.
-            </p>
-
-            <p style="line-height:1.8; margin-bottom:1.2rem; font-size:1.05rem;">
-              Growing up surrounded by music, he developed an early passion for songwriting
-              and performance, shaping a style that blends pop, R&B, and alternative
-              influences with a modern, youthful energy.
-            </p>
-
-            <p style="line-height:1.8; margin-bottom:1.2rem; font-size:1.05rem;">
-              Todd began his career during the COVID-19 pandemic, writing and producing his
-              first extended play, <i>Demos Before Prom</i>, which featured songs from his
-              high school years. He initially gained attention by falsely claiming his songs
-              were unreleased Steve Lacy tracks — a move that unexpectedly boosted his reach.
-            </p>
-
-            <p style="line-height:1.8; margin-bottom:1.2rem; font-size:1.05rem;">
-              His commercial breakthrough came in 2023 when his singles “Art House” and
-              “Roommates” went viral on TikTok, leading to his signing with Columbia Records.
-            </p>
-
-            <p style="line-height:1.8; font-size:1.05rem;">
-              Today, Malcolm continues expanding his reach through new music, live
-              performances, and a growing global fanbase. Whether on stage or in the studio,
-              he brings sincerity and creative vision that define his artistic identity.
-            </p>
-          </div>
-
-          <!-- IMAGE (SLIDES IN) -->
-          <div class="card bio-image" style="padding:0;">
-            <img src="images/malcAbout1.png" alt="Malcolm Todd" style="
-              width:100%;
-              height:100%;
-              object-fit:cover;
-              border-radius:var(--radius);
-            ">
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- OFFICIAL STORE – CENTERED -->
-    <section class="container" style="margin-top:60px; max-width:500px; animation:fadeIn 1.2s ease forwards;">
-      <div class="card" style="text-align:center;">
-        <h3 style="font-family:Oswald; letter-spacing:2px; color:var(--navy);">OFFICIAL STORE</h3>
-        <a href="shop.html" class="btn" style="margin-top:10px;">Shop Now</a>
-      </div>
-    </section>
-
   </main>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
     <p>© 2025 Malcolm Todd</p>
-
-    <ul class="socials">
-      <li><a href="https://www.instagram.com/malcolmtodd" target="_blank"><img src="images/instagram.png"></a></li>
-      <li><a href="https://www.youtube.com/@malcolm_todd" target="_blank"><img src="images/youtube.png"></a></li>
-      <li><a href="https://open.spotify.com/artist/7eKkW1zo5uzW8kUntiiBvz" target="_blank"><img src="images/spotify.png"></a></li>
-    </ul>
   </footer>
-
-  <script src="assets/main.js"></script>
-  <script src="assets/cart.js"></script>
-
 </body>
 </html>
